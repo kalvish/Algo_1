@@ -1,3 +1,5 @@
+import utilities.NumberOperations;
+
 public class BinarySearch {
 
 	/**
@@ -24,12 +26,10 @@ public class BinarySearch {
 		int index;
 
 		while (true) {
-			if (isOdd(max + min)) {
-				index = (max + min - 1) / 2;
-			} else {
-				index = (max + min) / 2;
-			}
-
+			
+			boolean isLowerBound = true;
+			index = NumberOperations.getHalfValue(min+max, isLowerBound);
+			
 			int guess = arr[index];
 
 			System.out.println(guess);
@@ -46,10 +46,5 @@ public class BinarySearch {
 
 	}
 
-	public static boolean isOdd(int numToAccess) {
-		if (numToAccess % 2 == 1) {
-			return true;
-		}
-		return false;
-	}
+
 }

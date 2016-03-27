@@ -47,4 +47,18 @@ public class NumberOperations {
 		 }
 
 	}
+	
+	public static int getHalfValue(int valueToDevide, boolean isLowerBound){
+		int devidedValue;
+		if (NumberOperations.isNumOdd(valueToDevide)) {
+			if(isLowerBound){
+				devidedValue = (valueToDevide - 1) / 2;
+			}else{
+				devidedValue = (valueToDevide + 1) / 2;
+			}		
+		} else {
+			devidedValue = valueToDevide / 2;
+		}
+		return devidedValue;
+	}
 }
