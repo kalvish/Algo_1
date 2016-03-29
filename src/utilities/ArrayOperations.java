@@ -32,5 +32,17 @@ public class ArrayOperations {
 			}
 			return minIndex;
 		}
+		
+		public static int[] insertToArr(int[] arr, int rightIndex, int value){
+			int key = rightIndex+1;
+			for (int i = rightIndex; i >= 0; i--) { //O(N)
+				if(value<arr[i]){
+					arr[i+1] = arr[i];
+					key = i;
+				}
+			}
+			arr[key] = value;
+ 			return arr;
+		}
 }
 
